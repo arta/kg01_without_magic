@@ -1,10 +1,23 @@
 <h2>All Students</h2>
 
-<% @students.each do |student| %>
-  <div class="student">
-    <p>
-      <strong>Name:</strong> <%= link_to student.name, student %> <!-- a bit of magic there -->
-      <!-- <strong>Name:</strong> <%= link_to student.name, student_path( student ) %> -->
-    </p>
-  </div>
-<% end %>
+<%= render @students %>
+<!--
+• Most rails magic here:
+:: render method infers collection was passed
+:: ( perhaps with: @students.is_a?( Array ) )
+:: => it runs partial for each member
+• The partial name matches the model name (with a prepended underscore).
+• The variable name used in the partial matches the partial name.
+-->
+
+<!-- less magic: render runs iteration -->
+<%#= render partial: 'student', collection: @students %>
+
+<%
+=begin %>
+  <% @students.each do |student| %>
+    <%#= render student %>              <%# a bit of magic: shorter %>
+    <%#= render partial: 'student', object: student %>
+  <% end %>
+<%
+=end %>

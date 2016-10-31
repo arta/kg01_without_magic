@@ -1,10 +1,16 @@
 <h2>Student Information</h2>
 
-<div class="student">
-  <p>
-    <strong>Name:</strong> <%= @student.name %>
-  </p>
-</div>
+<%= render @student %>
+<!--
+• Here with some rails magic:
+:: render method infers name of the partial and the variable used inside
+• for this to work:
+:: The partial name matches the model name (with a prepended underscore).
+:: The variable name used in the partial matches the partial name.
+-->
+
+<!-- explicit, self-explanatory form of rendering a partial -->
+<%#= render partial: 'student', object: @student %>
 
 <p>
   <%= link_to 'Back to All Students', students_path %>

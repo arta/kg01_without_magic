@@ -1,0 +1,13 @@
+<!--
+
+• The partial name matches the model name (with a prepended underscore).
+• The variable name used in the partial matches the partial name.
+
+-->
+
+<div class="student">
+  <p>
+    <strong>Name:</strong> <%= link_to student.name, student %> <!-- a bit of magic there -->
+    <!-- <strong>Name:</strong> <%= link_to student.name, student_path( student ) %> -->
+  </p>
+</div>
