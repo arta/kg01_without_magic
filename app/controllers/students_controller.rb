@@ -6,7 +6,7 @@ class StudentsController < ApplicationController
   # Automatically load the app/views/students/index.html.erb
 
   def show
-    @student = Student.find( params[:id] ) # Load the student mentioned by id in the route
+    @student = find_student # Load the student mentioned by id in the route
   end
   # Automatically load the app/views/students/show.html.erb
 
@@ -28,11 +28,11 @@ class StudentsController < ApplicationController
   # Explicitly redirect_to|render a resource
 
   def edit
-    @student = Student.find params[:id]
+    @student = find_student
   end
 
   def update
-    @student = Student.find params[:id]
+    @student = find_student
 
     if @student.update student_params
       redirect_to @student
@@ -42,6 +42,10 @@ class StudentsController < ApplicationController
   end
 
   private
+
+    def find_student
+      Student.find params[:id]
+    end
 
     def student_params
       params.require( :student ).permit( :name )
