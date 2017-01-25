@@ -1,5 +1,21 @@
 ################################################################################
 1-25-17: #######################################################################
+################################################################################
+• WHAT: activeadmin gem:
+: Login in per docs http://activeadmin.info/docs/documentation.html specs
+  (admin@example.com, password) wouldn't work
+: Setting a new admin_user by getting:
+
+    /admin/admin_users/new
+
+  wouldn't either; redirect to login firs! = CATCH 22
+
+• WHY: docs do no list an essential step - creating a first admin first:
+
+    $ rails db:seed
+
+  then, I can login and create own admin and delete the seeded one ... all good
+################################################################################
 • WHAT: gem 'activeadmin':
 : activeadmin would not install its dependencies. I installed them manually
   from terminal, Gemfile wouldn't kick in (`$ bundle` did nothing),
