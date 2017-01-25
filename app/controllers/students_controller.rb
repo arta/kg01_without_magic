@@ -25,7 +25,7 @@ class StudentsController < ApplicationController
     end
   end
   # This action does not have an associated view!
-  # Automatically load the app/views/students/:id ?
+  # Explicitly redirect_to|render a resource
 
   private
   def student_params
