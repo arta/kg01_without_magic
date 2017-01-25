@@ -4,4 +4,5 @@
   $ rails g active_admin:install
   $ rails g devise:views
   $ rails db:seed
+  $ rails g active_admin:resource student
 ################################################################################
