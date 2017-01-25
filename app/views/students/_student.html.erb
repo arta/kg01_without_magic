@@ -11,5 +11,6 @@
     <!-- <strong>Name:</strong> <%= link_to student.name, student_path( student ) %> -->
     <%= link_to 'Edit', [:edit, student] %>
     <!-- <%= link_to 'Edit', edit_student_path( student ) %> -->
+    <%= link_to 'Delete', student, method: :delete, data:{ confirm:'Heads up! Delete the student?' } %>
   </p>
 </div>

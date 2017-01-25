@@ -44,6 +44,12 @@ class StudentsController < ApplicationController
     end
   end
 
+  def destroy
+    @student = find_student
+    @student.destroy
+    redirect_to students_path
+  end
+
   private
 
     def find_student

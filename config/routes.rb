@@ -13,9 +13,12 @@ Rails.application.routes.draw do
   get 'students/new'  => 'students#new', as: 'new_student'
   post 'students'     => 'students#create'
 
-  # UPDATE Rotes:
+  # UPDATE Routes:
   get 'students/:id/edit' => 'students#edit', as: 'edit_student', id: /\d+/
   patch 'students/:id'    => 'students#update'
+
+  # DELETE Route:
+  delete 'students/:id' => 'students#destroy', id: /\d+/
 
   root 'students#index'
 end
