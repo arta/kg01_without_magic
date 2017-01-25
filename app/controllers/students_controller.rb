@@ -1,3 +1,6 @@
+# Controller - with its actions, which may call private methods - represents
+#   visitors' / users' interface to Model's CRUD methods aka resources
+
 class StudentsController < ApplicationController
   def index
     @students = Student.order( :name ) # Load all students ordered by name
