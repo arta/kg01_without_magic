@@ -9,5 +9,7 @@
   <p>
     <strong>Name:</strong> <%= link_to student.name, student %> <!-- a bit of magic there -->
     <!-- <strong>Name:</strong> <%= link_to student.name, student_path( student ) %> -->
+    <%= link_to 'Edit', [:edit, student] %>
+    <!-- <%= link_to 'Edit', edit_student_path( student ) %> -->
   </p>
 </div>
