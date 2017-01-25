@@ -27,9 +27,24 @@ class StudentsController < ApplicationController
   # This action does not have an associated view!
   # Explicitly redirect_to|render a resource
 
-  private
-  def student_params
-    params.require( :student ).permit( :name )
+  def edit
+    @student = Student.find params[:id]
   end
+
+  def update
+    @student = Student.find params[:id]
+
+    if @student.update student_params
+      redirect_to @student
+    else
+      render :edit
+    end
+  end
+
+  private
+
+    def student_params
+      params.require( :student ).permit( :name )
+    end
 
 end

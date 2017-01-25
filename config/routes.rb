@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  # routes
+  # ROUTES:
   # HTTP VERBS: get, post, put, patch, delete
   # verb 'url/path' => 'controller#action'
+
   # SHOW Routes:
   get 'students'      => 'students#index'
   get 'students/:id'  => 'students#show', as: 'student', id: /\d+/ #<= constraints: http://guides.rubyonrails.org/routing.html#segment-constraints
@@ -11,7 +12,10 @@ Rails.application.routes.draw do
   # CREATE Routes:
   get 'students/new'  => 'students#new', as: 'new_student'
   post 'students'     => 'students#create'
-  root 'students#index'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # UPDATE Rotes:
+  get 'students/:id/edit' => 'students#edit', as: 'edit_student', id: /\d+/
+  patch 'students/:id'    => 'students#update'
+
+  root 'students#index'
 end
