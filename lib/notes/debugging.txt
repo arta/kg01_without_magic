@@ -1,0 +1,23 @@
+################################################################################
+1-25-17: #######################################################################
+• WHAT: gem 'activeadmin':
+: activeadmin would not install its dependencies. I installed them manually
+  from terminal, Gemfile wouldn't kick in (`$ bundle` did nothing),
+  as they were reported missing, one by one:
+
+    $ gem install kaminari
+    $ gem install bourbon
+    $ gem install formtastic
+    $ gem install formtastic_i18n
+    $ gem install has_scope
+    $ gem install jquery-ui-rails
+    $ gem install arbre
+    $ gem install ransack
+
+• WHY: I missed the topmost line in Gemfile: `source 'https://rubygems.org'`
+  when pasting it from another app to bump Rails up to 5.0.1
+
+• FIX: add the missing top line to Gemfile:
+
+    source 'https://rubygems.org'
+################################################################################
